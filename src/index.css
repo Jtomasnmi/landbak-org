@@ -1,0 +1,37 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap");
+@import "tailwindcss";
+@import "flowbite-react/plugin/tailwindcss";
+@source "../.flowbite-react/class-list.json";
+
+@theme inline {
+  --font-manrope: "Manrope", sans-serif;
+  --font-sans: "Manrope Variable", sans-serif;
+  --animate-right-to-left: right-to-left-linear 20s linear infinite;
+
+  @keyframes right-to-left-linear {
+    0% {
+      transform: translateX(-50%);
+    }
+    100% {
+      transform: translateX(-10%);
+    }
+  } 
+}
+
+:root {
+  --font-manrope: "Manrope", sans-serif;
+}
+
+@layer base {
+  body {
+    @apply font-manrope;
+  }
+  .bg-gradient {
+    background: #f6f6f6;
+    background: linear-gradient(
+      90deg,
+      rgba(246, 246, 246, 1) 0%,
+      rgba(207, 227, 209, 1) 100%
+    );
+  }
+}
