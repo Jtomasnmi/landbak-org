@@ -3,6 +3,7 @@ import {
   CubeTransparentIcon,
 } from "@heroicons/react/24/outline";
 import { Button, Dropdown, DropdownItem } from "flowbite-react";
+import { NavLink } from "react-router";
 
 const Header = () => {
   return (
@@ -19,25 +20,37 @@ const Header = () => {
           <p className="text-sm tracking-wide cursor-pointer text-green-800 font-bold hover:text-green-800">
             Home
           </p>
+          <p className="text-sm tracking-wide cursor-pointer text-neutral-800 font-medium hover:text-green-800">
+            Services
+          </p>
+          <p className="text-sm tracking-wide cursor-pointer text-neutral-800 font-medium hover:text-green-800">
+            About Us
+          </p>
           <Dropdown
             label=""
             dismissOnClick={false}
             renderTrigger={() => (
               <div className="flex items-center gap-2 text-neutral-800 font-medium hover:text-green-800">
                 <span className="text-sm tracking-wide cursor-pointer ">
-                  Services{" "}
+                  Others{" "}
                 </span>
                 <ChevronDownIcon className="size-5" />
               </div>
             )}
           >
-            <DropdownItem>Dashboard</DropdownItem>
-            <DropdownItem>Settings</DropdownItem>
+            <DropdownItem className="text-sm hover:text-green-700 font-medium">
+              <NavLink
+                to="https://nmiph.itclientportal.com/ClientPortal/Login.aspx?accountid=184"
+                target="_blank"
+              >
+                File an Incident/Service Request
+              </NavLink>
+            </DropdownItem>
           </Dropdown>
-          <p className="text-sm tracking-wide cursor-pointer text-neutral-800 font-medium hover:text-green-800">
-            About Us
-          </p>
-          <Button color="green" className="rounded-none">Contact Us</Button>
+
+          <Button color="green" className="rounded-none">
+            Contact Us
+          </Button>
         </div>
       </header>
     </>
